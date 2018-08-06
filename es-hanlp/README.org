@@ -1,0 +1,39 @@
+
+ 
+* 准备
+
+
+#+BEGIN_QUOTE
+
+1. 下载字典到data目录（参考https://github.com/hankcs/HanLP)
+
+2. 下载插件到data目录
+wget https://github.com/wisonwang/hanlp-ext/releases/download/es-hanlp-plugin-5.4.3-1.6.6/elasticsearch-hanlp-5.4.3.zip 
+
+mv elasticsearch-hanlp-5.4.3.zip data/
+
+#+END_QUOTE
+
+
+* elastic search + hanlp 中文搜索系统
+
+** build
+
+sh build.sh
+
+** run single mode
+
+具体用法参考[[https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html][elsticsearch docker]]:
+
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" wison/elasticsearch-with-hanlp:5.4.3
+
+* kibana search + hanlp 中文搜索系统
+
+** build
+
+sh build.sh
+
+** run kibana cluster model
+
+docker-compose up
+
