@@ -48,8 +48,10 @@ services:
 volumes:
   esdata1:
     driver: local
+    name: esdata1
   esdata2:
     driver: local
+    name: esdata1
 
 networks:
   esnet: 
